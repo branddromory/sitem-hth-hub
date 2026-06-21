@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>华体会 | 专业站点介绍</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: #f4f7fa;
+            color: #1e293b;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .hero {
+            background: linear-gradient(145deg, #0b1a2e 0%, #1a2f44 60%, #24445a 100%);
+            color: #eef3f8;
+            padding: 5rem 2rem 4.5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, #3b9bdb, #66b8f0, #3b9bdb);
+        }
+
+        .hero h1 {
+            font-size: 2.6rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            margin-bottom: 0.75rem;
+        }
+
+        .hero .sub {
+            font-size: 1.1rem;
+            color: #b8d0e8;
+            max-width: 640px;
+            margin: 0 auto;
+            font-weight: 300;
+        }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem 4rem;
+        }
+
+        .intro-card {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 2.5rem 2.2rem;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+            margin-top: -1.2rem;
+            position: relative;
+            z-index: 2;
+            border: 1px solid #e9edf2;
+        }
+
+        .intro-card p {
+            margin-bottom: 1.2rem;
+            font-size: 1rem;
+            color: #2d3a4b;
+        }
+
+        .intro-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.8rem;
+            margin: 2.8rem 0 1.8rem;
+        }
+
+        .feature-item {
+            background: #f8faff;
+            border-radius: 16px;
+            padding: 1.6rem 1.4rem;
+            border-left: 4px solid #3b9bdb;
+            transition: background 0.2s;
+        }
+
+        .feature-item:hover {
+            background: #eef5fc;
+        }
+
+        .feature-item h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #0b2a40;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-item p {
+            font-size: 0.92rem;
+            color: #3d4f64;
+            margin: 0;
+        }
+
+        .accent-link {
+            color: #1a6c9e;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid rgba(26, 108, 158, 0.25);
+            transition: border-color 0.2s, color 0.2s;
+        }
+
+        .accent-link:hover {
+            color: #0d4a70;
+            border-bottom-color: #0d4a70;
+        }
+
+        .faq-mini {
+            margin-top: 2.6rem;
+            background: #f2f6fc;
+            border-radius: 18px;
+            padding: 1.8rem 2rem;
+        }
+
+        .faq-mini dt {
+            font-weight: 600;
+            color: #0d2e44;
+            margin-top: 1rem;
+            font-size: 0.98rem;
+        }
+
+        .faq-mini dt:first-of-type {
+            margin-top: 0;
+        }
+
+        .faq-mini dd {
+            margin: 0.2rem 0 0.8rem 0;
+            font-size: 0.92rem;
+            color: #3a4b5e;
+        }
+
+        .site-note {
+            display: inline-block;
+            background: #eaf1fa;
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-size: 0.88rem;
+            color: #1b5070;
+            margin-top: 1.6rem;
+        }
+
+        .footer-note {
+            text-align: center;
+            font-size: 0.85rem;
+            color: #7b8a9d;
+            border-top: 1px solid #dce2ea;
+            padding-top: 2rem;
+            margin-top: 2.8rem;
+        }
+
+        @media (max-width: 640px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero .sub {
+                font-size: 0.95rem;
+            }
+
+            .intro-card {
+                padding: 1.8rem 1.2rem;
+            }
+
+            .feature-grid {
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header class="hero">
+    <h1>华体会</h1>
+    <p class="sub">一个专注信息整合与可信呈现的站点，沉淀细节，还原事实。</p>
+</header>
+
+<div class="container">
+    <div class="intro-card">
+        <p>
+            在信息繁杂的网络环境中，择取可靠的内容源本身便是一种判断力。<a href="https://sitem-hth.com.cn" class="accent-link">华体会</a>以此为起点，围绕多维度主题持续梳理、归纳，并保留具有参考价值的公开资料与站方说明。我们不生产夸张的叙事，只希望让每一次浏览都获得清晰、准确的背景信息。
+        </p>
+        <p>
+            站点内容涵盖功能指引、常见问题归纳、平台规则摘要以及部分场景说明，所有信息均基于公开材料与原始表述进行摘编。若有变动，请以站内最新版本为准。
+        </p>
+
+        <div class="feature-grid">
+            <div class="feature-item">
+                <h3>结构化说明</h3>
+                <p>每个模块围绕一个主题展开，段落之间保持逻辑递进，方便快速定位关键信息。</p>
+            </div>
+            <div class="feature-item">
+                <h3>来源可追溯</h3>
+                <p>重要条目附注原始出处或版本标识，便于交叉验证，降低信息损耗。</p>
+            </div>
+            <div class="feature-item">
+                <h3>轻量阅读体验</h3>
+                <p>版式以内容为先，减少视觉干扰。深色头图与浅色正文区自然区隔，强调色仅用于链接与关键标识。</p>
+            </div>
+            <div class="feature-item">
+                <h3>持续补完</h3>
+                <p>随着原始资料更新，站点会对应调整内容，保持介绍与事实之间的同步关系。</p>
+            </div>
+        </div>
+
+        <p>
+            无论你是因为何种场景接触到<a href="https://sitem-hth.com.cn" class="accent-link">华体会</a>，我们建议你从“站点说明”板块开始浏览。其中浓缩了本页关于内容范围、更新频率与引用准则的基本框架，能帮助你快速判断页面信息是否满足你的具体需求。
+        </p>
+
+        <dl class="faq-mini">
+            <dt>站内信息多久更新一次？</dt>
+            <dd>视原始资料变动情况而定。通常重要变更会在七个工作日内完成同步，并在页面底部标注最近修改时间。</dd>
+            <dt>是否提供原文链接？</dt>
+            <dd>核心条目会以脚注或括号形式注明来源，方便直接查阅原始表述。部分内容为概括性复述，建议以原文为准。</dd>
+            <dt>遇到矛盾信息如何处理？</dt>
+            <dd>你可以通过站点主页提供的联系方式提交反馈，我们会在核查后给出修正或补充说明。</dd>
+        </dl>
+
+        <span class="site-note">当前版本内容核查日期：2025.03</span>
+    </div>
+
+    <div class="footer-note">
+        以事实为锚，以清晰为尺。如有疑问，请以 <a href="https://sitem-hth.com.cn" class="accent-link">华体会</a> 站内最新页面为准。
+    </div>
+</div>
+
+</body>
+</html>
