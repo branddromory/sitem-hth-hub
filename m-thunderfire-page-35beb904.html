@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>雷火电竞 · 简明指南与访问提醒</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f2f4f6;
+            color: #1e2a36;
+            line-height: 1.6;
+            padding: 2rem 1rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .container {
+            max-width: 1120px;
+            width: 100%;
+        }
+
+        /* 主视觉卡片 (hero) */
+        .hero-card {
+            background: linear-gradient(145deg, #ffffff 0%, #f9fafb 100%);
+            border: 1px solid #e2e6ea;
+            border-radius: 28px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04), 0 2px 6px rgba(0, 0, 0, 0.02);
+            padding: 2.8rem 2rem;
+            margin-bottom: 2.5rem;
+            text-align: center;
+            transition: box-shadow 0.2s;
+        }
+        .hero-card:hover {
+            box-shadow: 0 10px 28px rgba(0, 0, 0, 0.06);
+        }
+        .hero-card h1 {
+            font-size: 2.4rem;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.6rem;
+            color: #131f2c;
+        }
+        .hero-card .subhead {
+            font-size: 1.1rem;
+            color: #4b5a6a;
+            max-width: 640px;
+            margin: 0 auto 1.2rem;
+        }
+        .hero-card .tagline {
+            display: inline-block;
+            background: #e6edf5;
+            border-radius: 40px;
+            padding: 0.35rem 1.4rem;
+            font-size: 0.9rem;
+            color: #1f3a5f;
+            border: 1px solid #d5dee8;
+            margin-top: 0.2rem;
+        }
+
+        /* 卡片网格通用 */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.8rem;
+            margin: 2rem 0;
+        }
+        .card {
+            background: #ffffff;
+            border: 1px solid #e5e9ef;
+            border-radius: 22px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+            padding: 1.8rem 1.6rem 2rem;
+            transition: transform 0.15s ease, box-shadow 0.15s;
+        }
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.04);
+        }
+        .card h2 {
+            font-size: 1.3rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            color: #1f2d3d;
+            border-left: 4px solid #7c8fa3;
+            padding-left: 0.8rem;
+        }
+        .card p, .card li {
+            font-size: 0.98rem;
+            color: #2f4053;
+        }
+        .card ul {
+            list-style: none;
+            padding-left: 0.2rem;
+        }
+        .card ul li {
+            padding: 0.35rem 0;
+            position: relative;
+            padding-left: 1.4rem;
+        }
+        .card ul li::before {
+            content: "•";
+            color: #6a7c90;
+            font-weight: 500;
+            position: absolute;
+            left: 0.1rem;
+        }
+
+        /* 指引段落 (自然链接) */
+        .guide-section {
+            background: #ffffff;
+            border-radius: 22px;
+            border: 1px solid #e2e7ec;
+            padding: 2rem 2.2rem;
+            margin: 2.5rem 0 2rem;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.02);
+        }
+        .guide-section h2 {
+            font-size: 1.4rem;
+            font-weight: 500;
+            margin-bottom: 1.2rem;
+            color: #1b2838;
+        }
+        .guide-section p {
+            margin-bottom: 1rem;
+            color: #2a3a4b;
+            font-size: 1rem;
+        }
+        .guide-section a {
+            color: #1f4b7a;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid #b8cadc;
+            transition: border-color 0.15s, color 0.15s;
+        }
+        .guide-section a:hover {
+            color: #0a2f52;
+            border-bottom-color: #1f4b7a;
+        }
+
+        /* 提示/faq 区块 */
+        .notice-flex {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.6rem;
+            margin: 1.6rem 0 0.6rem;
+        }
+        .notice-item {
+            flex: 1 1 240px;
+            background: #f8fafc;
+            border-radius: 20px;
+            padding: 1.2rem 1.4rem;
+            border: 1px solid #e4e9f0;
+        }
+        .notice-item h3 {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #1b2b3e;
+            margin-bottom: 0.4rem;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+        .notice-item p {
+            font-size: 0.92rem;
+            color: #3d5065;
+        }
+
+        /* 页脚分隔 */
+        .footer-note {
+            margin-top: 3rem;
+            font-size: 0.85rem;
+            color: #66788a;
+            border-top: 1px solid #dce2e9;
+            padding-top: 1.6rem;
+            text-align: center;
+        }
+
+        /* 响应式微调 */
+        @media (max-width: 640px) {
+            body {
+                padding: 1.2rem 0.8rem;
+            }
+            .hero-card {
+                padding: 2rem 1.2rem;
+            }
+            .hero-card h1 {
+                font-size: 1.9rem;
+            }
+            .card {
+                padding: 1.5rem 1.2rem;
+            }
+            .guide-section {
+                padding: 1.6rem 1.2rem;
+            }
+        }
+        @media (min-width: 900px) {
+            .card-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <!-- hero 主视觉卡片 -->
+    <div class="hero-card">
+        <h1>雷火电竞 · 简明指南</h1>
+        <div class="subhead">
+            以信息卡片形式梳理使用方向、适合人群与访问提醒，帮您快速建立清晰认知。
+        </div>
+        <span class="tagline">轻量导览 · 扎实信息</span>
+    </div>
+
+    <!-- 用途卡片 + 适合人群卡片 (网格) -->
+    <div class="card-grid">
+        <!-- 用途卡片 -->
+        <div class="card">
+            <h2>用途概览</h2>
+            <ul>
+                <li>赛事信息聚合与数据参考</li>
+                <li>玩法模式及规则快速查阅</li>
+                <li>平台内容更新与活动动态</li>
+                <li>社区观点与策略讨论空间</li>
+                <li>基础功能指引及常见问题</li>
+            </ul>
+        </div>
+        <!-- 适合人群卡片 -->
+        <div class="card">
+            <h2>适合人群</h2>
+            <ul>
+                <li>对电竞赛事有持续兴趣的观众</li>
+                <li>希望系统了解游戏模式的玩家</li>
+                <li>关注平台功能与版本变化的使用者</li>
+                <li>需要快速检索规则与数据的爱好者</li>
+                <li>偏好干净信息界面、轻度查阅的用户</li>
+            </ul>
+        </div>
+        <!-- FAQ 摘要卡片 (替代特点卡片，增加变化) -->
+        <div class="card">
+            <h2>常见疑问速览</h2>
+            <ul>
+                <li>如何快速定位当前赛季信息？</li>
+                <li>平台内容是否需要注册即可浏览？</li>
+                <li>赛事数据更新频率大致如何？</li>
+                <li>是否提供多终端适配的访问体验？</li>
+                <li>有哪些公开的说明或帮助材料？</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 自然链接段落：简明指南 + 访问提示 嵌入 link -->
+    <div class="guide-section">
+        <h2>访问与使用提示</h2>
+        <p>
+            无论您是初次接触还是常驻用户，直接通过浏览器访问 
+            <a href="https://m-thunderfire.com">雷火电竞</a> 
+            即可获取当前版本下的赛事索引与功能模块。建议在稳定网络环境下加载，部分交互页面可能涉及动态数据调用，首次打开时请耐心等待内容渲染。
+        </p>
+        <p>
+            平台内容以信息展示与公开数据为主，适合日常查阅与横向对比。如果您关注特定赛事或模式，可先浏览顶部导航或搜索入口，多数页面无需登录即可浏览。由于电竞资讯迭代较快，建议定期关注页面更新提示。
+        </p>
+        <p>
+            若需了解更细致的规则或版本变更，可直接在站内帮助区域查看说明文档。整体设计偏重信息密度，页面布局以卡片与列表为主，便于快速扫描与定位。
+        </p>
+    </div>
+
+    <!-- 提示区块 (两个信息卡片风格) -->
+    <div class="notice-flex">
+        <div class="notice-item">
+            <h3>📌 访问提醒</h3>
+            <p>使用最新版浏览器可获得最佳排版效果。部分动态内容依赖 JavaScript，请保持脚本开启。如遇加载异常，可尝试刷新页面或稍后重试。</p>
+        </div>
+        <div class="notice-item">
+            <h3>📘 信息说明</h3>
+            <p>本站展示的赛事数据、玩法介绍均来自公开渠道，仅供参考。具体规则与活动以平台实时页面为准。建议结合官方说明交叉确认。</p>
+        </div>
+        <div class="notice-item">
+            <h3>🔍 查询建议</h3>
+            <p>使用页面内搜索或筛选功能可缩小信息范围。如查找特定游戏模式，可直接输入名称关键词。分类标签也提供另一种浏览路径。</p>
+        </div>
+    </div>
+
+    <!-- 页脚 (简单) -->
+    <div class="footer-note">
+        — 本页为独立介绍页，内容仅供信息参考 —
+    </div>
+
+</div>
+</body>
+</html>
